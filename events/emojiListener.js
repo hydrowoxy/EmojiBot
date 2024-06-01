@@ -6,9 +6,10 @@ module.exports = {
     async execute(message) {
         if (message.author.bot) return; // Ignore bot messages
 
-        const emojiUnicode = getUnicode(message.content);
-        if (emojiUnicode) {
-            await message.channel.send(emojiUnicode);
+        const unicode = getUnicode(message.content);
+        if (unicode) {
+            const response = `I think you meant, "${unicode}"`;
+            await message.channel.send(response);
         }
     },
 };
