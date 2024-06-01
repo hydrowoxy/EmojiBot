@@ -8,10 +8,10 @@ function getUnicode(text) {
     return null;
 }
 
-// Translate unicode to emoji
+// Translate unicode to emoji (preserve order from message)
 function getEmoji(unicode) {
     const codePoints = unicode.split('U+').slice(1).map(point => parseInt(point, 16));
-    const emojis = String.fromCodePoint(...codePoints);
+    const emojis = codePoints.map(codePoint => String.fromCodePoint(codePoint));
     return emojis;
 }
 

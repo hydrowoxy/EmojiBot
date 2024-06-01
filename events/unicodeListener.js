@@ -6,9 +6,11 @@ module.exports = {
     async execute(message) {
         if (message.author.bot) return; 
 
-        const emoji = getEmoji(message.content);
-        if (emoji) {
-            await message.react(emoji); 
+        const emojis = getEmoji(message.content);
+        if (emojis) {
+            for (const emoji of emojis) {
+                await message.react(emoji); 
+            }
         }
     },
 };
