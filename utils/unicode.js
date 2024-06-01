@@ -1,3 +1,4 @@
+// Translate emoji to unicode
 function getUnicode(text) {
     const regex = /(\p{Emoji_Presentation}|\p{Emoji}\uFE0F)/gu;
     const emojis = text.match(regex);
@@ -7,6 +8,7 @@ function getUnicode(text) {
     return null;
 }
 
+// Translate unicode to emoji
 function getEmoji(unicode) {
     const codePoints = unicode.split('U+').slice(1).map(point => parseInt(point, 16));
     const emojis = String.fromCodePoint(...codePoints);
