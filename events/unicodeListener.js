@@ -1,5 +1,5 @@
 const { Events } = require('discord.js');
-const { getEmoji } = require('../utils/unicode'); 
+const { getEmoji } = require('../utils/translate'); 
 
 module.exports = {
     name: Events.MessageCreate,
